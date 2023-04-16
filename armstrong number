@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+#include<iostream>
+using namespace std;
+
+int main() {
+	// Write your code here
+	int n;
+	 cin>>n;
+	 int c=(int)(log10(n)+1);
+	 int m=n,sum=0;
+	 while(m!=0){
+		 int digit=m%10;
+		 sum=sum+pow(digit,c);
+		 m=m/10;
+	 }
+	 if(n==sum){
+		 cout<<"true";
+         } 
+	 else {
+		 cout<<"false";
+         }
+}
