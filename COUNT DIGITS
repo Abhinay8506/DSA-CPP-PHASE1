@@ -1,0 +1,33 @@
+//Given a number N. Count the number of digits in N which evenly divides N
+
+int evenlyDivides(int N){
+        //code here
+        int m=N;
+        int count=0;
+        while(m!=0){
+            int digit=m%10;
+            if(digit>0 && N%digit==0)
+            {  count++;}
+            m=m/10;
+        }
+        return count;
+  }
+    
+    
+int count(int n){
+    //write your code here
+    int m=n;
+    int count=0;
+    while(m!=0){
+        count++;
+        m=m/10;
+        
+    }
+    return count;
+}
+
+int count(int n){
+    //write your code here
+    int count=(int)(log10(n)+1);
+    return count;
+}
