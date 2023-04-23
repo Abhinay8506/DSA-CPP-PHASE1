@@ -1,0 +1,26 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    vector<int>v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    map<int,int>mpp;
+    for(int i=0;i<n;i++){
+        mpp[v[i]]++;
+    }
+    for(auto it:mpp){
+        cout<<it.first<<"->"<<it.second<<endl;
+    }
+    int k;
+    cin>>k;
+    for(auto ite=mpp.rbegin();ite!=mpp.rend(),k>0;ite++){
+        cout<<ite->first<<"->"<<ite->second;
+        k--;
+    }
+
+
+
+}
