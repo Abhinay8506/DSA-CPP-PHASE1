@@ -1,0 +1,38 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+//INTEGER ARRAY
+const int n=1e4+1;
+int hashe[n];
+int main(){
+    int n1,value;
+    cin>>n1;
+    int arr[n1];
+    for(int i=0;i<n1;i++){
+        cin>>arr[i];
+        hashe[arr[i]]++;
+    }
+    cin>>value;
+    cout<<hashe[value];
+}
+
+//CHARACTER ARRAY
+int hashe[27];//ONLY SMALL LETTERS
+int hashee[256];//FOR ALL CHARACTERS
+
+int main(){
+    int n;
+    cin>>n;
+    char arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+        
+        hashe[arr[i]-'a']++;
+        hashee[arr[i]]++;
+
+    }
+    char value;
+    cin>>value;
+    cout<<hashe[value-'a']<<endl;
+    cout<<hashee[value];
+}
