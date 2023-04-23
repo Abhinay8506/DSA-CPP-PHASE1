@@ -1,0 +1,56 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    map<int,int>mpp;
+    for(int i=0;i<n;i++){
+        mpp[arr[i]]++;
+    }
+    for(auto it:mpp){
+        cout<<it.first<<"->"<<it.second<<endl;
+    }
+    int value;
+    cin>>value;
+    cout<<mpp[value];
+}
+
+//Given an array A[] of N positive integers which can contain integers from 1 to P
+where elements can be repeated or can be absent from the array. 
+Your task is to count the frequency of all elements from 1 to N.
+
+
+#include<bits/stdc++.h>
+#include<vector>
+using namespace std;
+void frequencyCount(vector<int>& arr,int N, int P)
+{ 
+        // code here
+        int hashe[P+1];
+        for(int i=1;i<=P;i++){
+            hashe[i]=0;
+        }
+        for(int i=0;i<=N;i++){
+            hashe[arr[i]]++;
+        }
+        for(int i=1;i<=N;i++){
+            cout<<hashe[i]<<" ";
+        }
+}
+int main(){
+    int n;
+    cin>>n;
+    vector<int>arr(n);
+    int c;
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+       
+    }
+    frequencyCount(arr,n,5);
+    return 0;
+
+}
