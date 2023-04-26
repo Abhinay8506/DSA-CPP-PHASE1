@@ -1,0 +1,31 @@
+/*int uniqueoccur(int arr[],int n){
+    int ans=0;
+    for(int i=0;i<n;i++){
+        ans=ans^arr[i];
+    }
+    return ans;
+}*/
+/*void uniqueoccur2(int arr[],int n){
+    map<int,int>mpp;
+    for(int i=0;i<n;i++){
+        mpp[arr[i]]++;
+    }
+    for(auto it:mpp){
+        if(it.second==1){
+            cout<<it.first;
+        }
+    }
+}*/
+/*void uniqueoccur3(int arr[],int n){
+    for(int i=0;i<n;i++){
+       int count=0;
+       for(int j=0;j<n;j++){
+           if(arr[i]==arr[j]){
+              count++;
+           }
+       }
+       if(count==1){
+          cout<<arr[i];
+       }
+    }
+}*/
