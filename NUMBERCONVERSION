@@ -1,0 +1,24 @@
+/*long int decimalbinary(int n){
+      long int sum=0;
+      int i=0;
+      while(n!=0){
+           sum=pow(10,i)*(n&1)+sum;
+           n=n>>1;
+           i++;
+      }
+      return sum;
+}*/
+/*int binarydecimal(int n){
+    int sum=0,i=1;
+    while(n!=0){
+        sum=(n%10)*i+sum;
+        n=n/10;
+        i=i*2;
+    }
+    return sum;
+}*/
+
+int main(){
+    /*cout<<decimalbinary(n);*/
+    /*cout<<binarydecimal(n);*/
+}
