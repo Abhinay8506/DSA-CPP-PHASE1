@@ -13,6 +13,13 @@ void reverse(int a[],int i,int j){
     reverse(a,i+1,j-1);
 
 }
+/*void reversearray(int arr[],int n){
+    for(int i=0;i<=(n/2);i++){
+        int temp=arr[i];
+        arr[i]=arr[n-i-1];
+        arr[n-i-1]=temp;
+    }
+}*/
 int main(){
     int n;
     cin>>n;
