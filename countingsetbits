@@ -1,0 +1,18 @@
+int main(){
+    int n;
+    cin>>n;
+    //METHOD-1 STL
+    
+    int count=__builtin_popcount(n);
+    cout<<count;
+    
+    //METHOD -2
+    int coun=0;
+    while(n!=0){
+        if(n&1){
+            coun++;
+        }
+        n=n>>1;
+    }
+    cout<<coun;
+}
