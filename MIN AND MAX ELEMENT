@@ -1,0 +1,39 @@
+#include<bits/stdc++.h>
+using namespace std;
+int minele(int a[],int n){
+    
+    int mine=INT_MAX;
+    for(int i=0;i<n;i++){
+        /*if(min>a[i]){
+            min=a[i];
+        }*/
+        mine=min(mine,a[i]);
+    }
+    
+    return mine;
+}
+int maxele(int a[],int n){
+    
+    int mine=INT_MIN;
+    for(int i=0;i<n;i++){
+        /*if(mine<a[i]){
+            mine=a[i];
+        }*/
+        mine=max(mine,a[i]);
+    }
+    return mine;
+}
+int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cout<<maxele(arr,n)<<endl;
+    cout<<minele(arr,n)<<endl;
+    
+    ///methpod-2 STL
+    cout<<*max_element(arr,arr+n)<<endl;
+    cout<<*min_element(arr,arr+n)<<endl;
+}
