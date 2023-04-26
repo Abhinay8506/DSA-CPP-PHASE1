@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+using namespace std;
+/*bool uniqueoccurence(int arr[],int n){
+    map<int,int>mpp;
+    vector<int>re;
+    for(int i=0;i<n;i++){
+       mpp[arr[i]]++;
+    }
+    for(auto it:mpp){
+       re.push_back(it.second);
+    }
+    sort(re.begin(),re.end());
+    for(int i=0;i<(re.size()-1);i++){
+        if(re[i]==re[i+1]){
+            return false;
+        }
+    }
+    return true;
+}*/
+/*bool uniqueOccurrences(vector<int>& arr) {
+        vector<int> el;
+        vector<int> coun;
+        int co,temp;
+        for(int i=0;i<arr.size();i++){
+            temp=arr[i];
+            co=0;
+            if(count(el.begin(), el.end(), temp)!=1){
+               for(int j=0;j<arr.size();j++)
+               {
+                  if(temp==arr[j]){
+                      co++;
+                  }
+               }
+               if(count(coun.begin(), coun.end(), co)){
+                   return false;
+               }
+               else{
+                   coun.push_back(co);
+               }
+               el.push_back(temp);
+            }
+           
+            }
+            return true;
+        
+          
+    }*/
+    
+    int main(){
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    /*cout<<uniqueoccurence(arr,n);*/
+    
+}
