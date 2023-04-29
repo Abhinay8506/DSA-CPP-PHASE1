@@ -1,0 +1,46 @@
+#include<bits/stdc++.h>
+using namespace std;
+int binarysearch(int a[],int l,int r,int k){
+    int mid;
+    int ans=-1;
+    while(l<r){
+        mid=l+(r-l)/2;
+        if(a[mid]==k){
+            ans=mid;
+            break;
+        }
+        else if(a[mid]>k){
+            r=mid;
+        }
+        else{
+            l=mid+1;
+        }
+
+    }
+    return ans;
+}
+int rotarraysearch(int a[],int n,int k){
+    int pivot=pivotmin(a,n);
+    int ans;
+    if((a[pivot]<=k)&&(k<=a[n-1])){
+          ans=binarysearch(a,pivot,n-1,k);
+    }
+    else{
+          ans=binarysearch(a,0,pivot-1,k);
+    }
+    return ans;
+
+}
+
+
+int main(){
+    int n,k,l;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    cin>>k;
+    cout<<rotarraysearch(arr,n,k)<<endl;
+
+}
