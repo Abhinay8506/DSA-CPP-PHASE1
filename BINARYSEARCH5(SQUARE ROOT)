@@ -1,0 +1,41 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long int sqrtint(int n){
+    long long int ans=-1;
+    int s=0;
+    int e=n;
+    long long int mid;
+    while(s<=e){
+        mid=s+(e-s)/2;
+        long long int sq=mid*mid;
+        if(sq==n){
+           ans=mid;
+           break;   
+        }
+        else if(sq>n){
+            e=mid-1;
+        }
+        else{
+            ans=mid;
+            s=mid+1;
+        }
+    }
+    return ans;
+}
+double sqrtfull(int n,int p,int temp){
+    double ans=temp;
+    double factor=1;
+    for(int i=0;i<=p;i++){
+        factor/=10;
+        for(double j=ans;j*j<n;j=j+factor){
+            ans=j;
+        }
+    }
+    return ans;
+}
+int main(){
+    int n,precision;
+    cin>>n>>precision;
+    int temp=sqrtint(n);
+    cout<<sqrtfull(n,precision,temp);
+}
