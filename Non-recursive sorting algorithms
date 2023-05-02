@@ -1,0 +1,44 @@
+#include <bits/stdc++.h> 
+void selectionSort(vector<int>& arr, int n)
+{   
+    // Write your code here.
+    for(int i=0;i<n-1;i++){
+        int temp=arr[i];
+        int pos=i;
+        for(int j=i+1;j<n;j++){
+            if(arr[j]<arr[pos]){
+                pos=j;
+            }
+        }
+        if(pos!=i){
+            arr[i]=arr[pos];
+            arr[pos]=temp;
+        }
+    }
+}
+void bubbleSort(vector<int>& arr, int n)
+{   
+    // Write your code here.
+    for(int i=0;i<n-1;i++){
+        int flag=0;
+        for(int j=0;j<n-i-1;j++){
+            if(arr[j]>arr[j+1]){
+                swap(arr[j],arr[j+1]);
+                flag=1;
+            }
+        }
+        if(!flag){
+            break;
+        }
+    }
+}
+void insertionSort(int n, vector<int> &arr){
+    // Write your code here.
+    for(int i=1;i<n;i++){
+        int j=i;
+        while(j>=0 && arr[j-1]>arr[j]){
+            swap(arr[j-1],arr[j]);
+            j--;
+        }
+    }
+}
