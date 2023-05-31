@@ -1,0 +1,44 @@
+#include<bits/stdc++.h>
+using namespace std;
+int getmaxoccurchar(string s){
+    int arr[26]={0};
+    int number=0;
+    for(int i=0;i<s.length();i++){
+        if(s[i]>='a'&& s[i]<='z'){
+            number=s[i]-'a';
+        }
+        else if(s[i]>='A' && s[i]<='Z'){
+            number=s[i]-'A';
+        }
+        arr[number]++;
+    }
+    int maxi=-1,ans=0;
+    for(int i=0;i<26;i++){
+        if(maxi<arr[i]){
+            maxi=arr[i];
+            ans=i;
+        }
+    }
+    return ans;
+}
+int main(){
+    /*string str;
+    map<char,int>mpp;
+    cin>>str;
+    for(int i=0;i<str.length();i++){
+        mpp[str[i]]++;
+    }
+    int maxi=0;
+    int chari='a';
+    for(auto it:mpp){
+        maxi=max(maxi,it.second);
+        chari=it.first;
+    }
+    cout<<chari;*/
+    string str;
+    cin>>str;
+    char ans='a'+getmaxoccurchar(str);
+    cout<<ans<<endl;
+
+    
+}
