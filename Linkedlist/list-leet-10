@@ -1,0 +1,57 @@
+class Solution {
+public:
+    bool looppresent(ListNode *head){
+    ListNode *fast=head;
+    ListNode *slow=head;
+    while(fast!=NULL && slow!=NULL){
+        fast=fast->next;
+        if(fast!=NULL){
+            fast=fast->next;
+        }
+        slow=slow->next;
+        if(fast==slow){
+            return true;
+        }
+    }
+    return false;
+    }
+    ListNode* floydintersection(ListNode *head){
+       ListNode *fast=head;
+       ListNode *slow=head;
+       while(slow!=NULL && fast!=NULL){
+           fast=fast->next;
+           if(fast!=NULL){
+               fast=fast->next;
+           }
+           slow=slow->next;
+           if(fast==slow){
+               return slow;
+           }
+       }
+       return NULL;
+    }
+    ListNode* loopstarting(ListNode*head){
+    
+    ListNode *intersection=floydintersection(head);
+    ListNode *slow=head;
+    if(intersection!=NULL){
+
+    while(slow!=intersection){
+        slow=slow->next;
+        intersection=intersection->next;
+    }
+    return slow;
+    }
+    return NULL;
+    }
+    
+    ListNode *detectCycle(ListNode *head) {
+      if(head==NULL){
+          return NULL;
+      }
+      if(looppresent(head)){
+         return loopstarting(head);
+      }
+      return NULL;
+    }
+};
